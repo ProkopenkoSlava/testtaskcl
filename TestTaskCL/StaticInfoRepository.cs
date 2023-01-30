@@ -10,6 +10,7 @@ namespace TestTaskCL
     {
         public static double BaseRate { get; set; } = 500;
 
+        // system info properties of different employee type salary factors
         private readonly static Dictionary<EmployeeType, SalaryFactors> _salaryFactors
             = new Dictionary<EmployeeType, SalaryFactors>() {
                 {
@@ -63,6 +64,7 @@ namespace TestTaskCL
             return _salaryCounter;
         }
 
+        // full years difference counter function
         public static int FullYearsDiff(DateTime start, DateTime end)
         {
             return (end.Year - start.Year - 1) +

@@ -35,6 +35,7 @@ namespace TestTaskCL
             get;
         }
 
+        // add new org node as subordinate to current
         public bool AddOrgNode(OrgNode orgNode)
         {
             if (!CheckOrgNode(orgNode))
@@ -53,6 +54,7 @@ namespace TestTaskCL
 
         }
 
+        // org node checking if always exists in org sturcture
         public bool CheckOrgNode(OrgNode orgNode)
         {
             if (this == orgNode)
@@ -74,6 +76,7 @@ namespace TestTaskCL
             return true;
         }
 
+        // get current node salary cost without subordinates
         protected double GetOwnSalaryCost(DateTime dateTime)
         {
             double res = _salaryCounter?.Count(dateTime, _person, _salaryFactors, StaticInfoRepository.BaseRate) ?? 0;
@@ -86,6 +89,7 @@ namespace TestTaskCL
             return GetOwnSalaryCost(dateTime) + GetSubordinatesSalaryCost(dateTime, this);
         }
 
+        // abstract method to get subordinates cost. must be implemented in derived classes
         protected abstract double GetSubordinatesSalaryCost(DateTime dateTime, OrgNode orgNode);
 
     }

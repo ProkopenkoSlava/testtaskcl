@@ -16,6 +16,7 @@ namespace TestTaskCL.Classes.OrgNodes
             _salaryCounter = StaticInfoRepository.GetSalaryCounter(_employeeType);
         }
 
+        // get salary cost of first level of subordinate
         protected override double GetSubordinatesSalaryCost(DateTime dateTime, OrgNode orgNode)
         {
             double sum = 0;

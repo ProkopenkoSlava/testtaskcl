@@ -13,6 +13,7 @@ namespace TestTaskCL.Classes.OrgNodes
              _salaryCounter = StaticInfoRepository.GetSalaryCounter(_employeeType);
         }
 
+        // employee can not have subordinates
         protected override double GetSubordinatesSalaryCost(DateTime dateTime, OrgNode orgNode) { 
               return 0;
         }

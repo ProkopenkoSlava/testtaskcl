@@ -16,6 +16,7 @@ namespace TestTaskCL.Classes.OrgNodes
             _salaryCounter = StaticInfoRepository.GetSalaryCounter(_employeeType);
         }
 
+        // get salary cost for all subordinate levels nodes
         protected override double GetSubordinatesSalaryCost(DateTime dateTime, OrgNode orgNode)
         {
             double sum = 0;
@@ -42,6 +43,7 @@ namespace TestTaskCL.Classes.OrgNodes
 
         }
 
+        // get all hierarchical subordinate nodes
         private void GetAllDepthSubordinateNodes(List<OrgNode> listOrgNodes, OrgNode orgNode)
         {
             if (orgNode.SubordinateOrgNodes == default)
