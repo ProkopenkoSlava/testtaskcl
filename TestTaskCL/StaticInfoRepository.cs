@@ -9,6 +9,7 @@ namespace TestTaskCL
     public static class StaticInfoRepository
     {
         public static double BaseRate { get; set; } = 500;
+        private static int _test = 200;
 
         // system info properties of different employee type salary factors
         private readonly static Dictionary<EmployeeType, SalaryFactors> _salaryFactors
